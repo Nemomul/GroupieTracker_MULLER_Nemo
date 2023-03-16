@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="../css/test.css" rel="Stylesheet">
+</head>
+<body>
+
+    {{ range . }}
+<div class="game-container">
+  <h2>{{ .Name }}</h2>
+  <img src="{{ .Image }}" alt="{{ .Name }}">
+  <p><strong>Status:</strong> {{ .Status }}</p>
+  <p><strong>Species:</strong> {{ .Species }}</p>
+  <p><strong>Type:</strong> {{ .Type }}</p>
+  <p><strong>Gender:</strong> {{ .Gender }}</p>
+  <p><strong>Origin:</strong> {{ .Origin.Name }}</p>
+  <p><strong>Location:</strong> {{ .Location.Name }}</p>
+  <p><strong>Episodes:</strong></p>
+  <ul>
+    {{ range .Episode }}
+    <li>{{ . }}</li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}
+
+  
+
+    
+</body>
+</html>
