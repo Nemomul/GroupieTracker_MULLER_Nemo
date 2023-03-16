@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="static/css/main.css" rel="Stylesheet">
+</head>
+<body>
+    
+
+    <nav>
+        <div class="container">
+        <a href="test.html"><img src="static/img/portail.png" class="logo" alt="Logo"></a>
+        <h1>Rick and Morty</h1>
+        </div>
+        <ul>
+            <li class="padding"><a href="index.html">PAGE PRINCIPALE</a></li>
+            <li><a href="">RECHERCHE SPECIFIQUE </a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <video loop="loop" autoplay="autoplay" muted>
+            <source src="static/img/backgroundd.mp4" type="video/mp4" />
+        </video> 
+    
+    <form action="/" method="post">
+        <label for="id">Character ID:</label>
+        <input type="text" id="id" name="id">
+        <button type="submit">Rechercher</button>
+    </form>
+
+    <div class="cards">
+    <h1>{{.Name}}</h1>
+	<p><strong>Status:</strong> {{.Status}}</p>
+	<p><strong>Species:</strong> {{.Species}}</p>
+	<p><strong>Type:</strong> {{.Type}}</p>
+	<p><strong>Gender:</strong> {{.Gender}}</p>
+	<p><strong>Origin:</strong> {{.Origin.Name}}</p>
+	<p><strong>Location:</strong> {{.Location.Name}}</p>
+	<img src="{{.Image}}" alt="{{.Name}}">
+    </div>
+    
+    </section>
+</body>
+</html>
