@@ -137,3 +137,15 @@ func getAllCharacters() ([]Character, error) {
 
 	return characters, nil
 }
+
+func sortLocations(locations []string, location string, characters []Character) []Character {
+	var result []Character
+	for _, loc := range locations {
+		for _, char := range characters {
+			if char.Location.Name == loc && loc == location {
+				result = append(result, char)
+			}
+		}
+	}
+	return result
+}
