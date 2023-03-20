@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="static/css/seconde.css" rel="Stylesheet" />
+</head>
+<body>
+  <nav>
+    <div class="containerr">
+    <a href="index.html"><img src="static/img/portail.png" class="logo" alt="Logo"></a>
+    <h1>Rick and Morty</h1>
+    </div>
+    <ul>
+      <li class="padding">
+        <label for="location">Trier par location:</label>
+        <form method="get">
+          <select id="location" name="location" onchange="this.form.submit()">
+            <option value="Earth">Earth</option>
+            <option value="Abadango">Abadango</option>
+            <option value="Citadel">Citadel</option>
+            <option value="Gear World">Gear World</option>
+            <option value="Gromflom Prime">Gromflom Prime</option>
+            <option value="Interdimensional Cable">Interdimensional Cable</option>
+            <option value="Post-Apocalyptic Earth">Post-Apocalyptic Earth</option>
+            <option value="Purge Planet">Purge Planet</option>
+            <option value="Venzenulon 7">Venzenulon 7</option>
+          </select>
+          <button type="submit">Trier</button>
+        </form>
+      </li>
+      
+        <li>
+            <form action="/" method="get">
+                <label for="episode">Rechercher par épisode:</label>
+                <input type="text" id="episode" name="episode">
+                <button type="submit">Rechercher</button>
+            </form>
+        </li>
+    </ul>
+</nav>
+
+  {{ range slice . 0 500 }}  
+<a class="style" href="http://localhost:80/Perso?id={{.ID}}">
+  <div class="perso-container">
+    <h2>{{ .Name }}</h2>
+    <img src="{{ .Image }}" alt="{{ .Name }}">
+    <p><strong>Status:</strong> {{ .Status }}</p>
+    <p><strong>Species:</strong> {{ .Species }}</p>
+    <p><strong>Type:</strong> {{ .Type }}</p>
+    <p><strong>Gender:</strong> {{ .Gender }}</p>
+    <p><strong>Origin:</strong> {{ .Origin.Name }}</p>
+    <p><strong>Location:</strong> {{ .Location.Name }}</p>
+    <p class="episode"><strong>Episodes:</strong></p>
+  
+      {{range slice .Episode 0 3}}
+      <p>{{ . }}</p>
+      {{ end }}
+  
+  </div>
+</a>
+{{ end }} 
+
+<footer class="site-footer">
+  <div class="container">
+    <div>
+      <div class="about">
+          <h6>A propos de moi</h6>
+          <p>Etudiant de Première année en Informatique à YNOV Aix en Provence. </p>
+          <hr>
+          <h6>Réseaux Sociaux</h6>
+      </div>
+      
+      <div>
+        <ul class="social-icons">
+          <li><a class="facebook" href="/"><img class="facebook" src="static/img/facebook.png"></img></a></li>
+          <li><a class="twitter" href="/"><img class="facebook" src="static/img/twitter.png"></img></a></li>
+          <li><a class="instagram" href="/"><img class="facebook" src="static/img/instagram.png"></img></a></li>
+          <li><a class="linkedin" href="/"><img class="facebook" src="static/img/linkedin.png"></img></a></li>   
+        </ul>
+      </div>
+
+      <div class="copyright">
+          <p> © 2023 All Rights Reserved by Némo MULLER </p>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

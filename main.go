@@ -1,13 +1,15 @@
 package main
 
+//Import les fichiers nécessaires
 import (
 	"encoding/json"
 	"fmt"
 	"html/template"
-
 	"net/http"
+	"strings"
 )
 
+// Structure pour stocker les informations d'un personnage
 type Character struct {
 	ID      int    `json:"id"`
 	Name    string `json:"name"`
@@ -28,11 +30,14 @@ type Character struct {
 	URL     string   `json:"url"`
 }
 
+// Fonction principale
 func main() {
 
+	// Configuration des fichiers statiques
 	static := http.FileServer(http.Dir("static"))
 	http.Handle("/static/", http.StripPrefix("/static/", static))
 
+	// Route pour la page d'accueil
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		id := r.FormValue("id")
 		if id == "" {
@@ -44,6 +49,7 @@ func main() {
 			return
 		}
 
+		// Exécution du template pour afficher le personnage
 		tmpl, err := template.ParseFiles("index.html")
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -57,14 +63,16 @@ func main() {
 		}
 	})
 
-	http.HandleFunc("/test", func(w http.ResponseWriter, r *http.Request) {
+	// Route pour la page de test
+	http.HandleFunc("/seconde", func(w http.ResponseWriter, r *http.Request) {
 		characters, err := getAllCharacters()
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 			return
 		}
 
-		tmpl, err := template.ParseFiles("static/html/test.html")
+		// Exécution du template pour afficher la liste des personnages
+		tmpl, err := template.ParseFiles("static/html/seconde.html")
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 			return
@@ -76,10 +84,21 @@ func main() {
 			return
 		}
 	})
+	//Route pour les cartes des personnages
+	http.HandleFunc("/Perso", func(w http.ResponseWriter, r *http.Request) {
+		idPerso := strings.TrimPrefix(r.URL.RequestURI(), "/Perso?id=")
+		p1, _ := getCharacter(idPerso)
 
+		tmpl, _ := template.ParseFiles("static/html/cards.html")
+		tmpl.Execute(w, p1)
+
+	})
+
+	// Démarrage du serveur web
 	http.ListenAndServe(":80", nil)
 }
 
+// Récupération d'un personnage par son identifiant
 func getCharacter(id string) (*Character, error) {
 
 	url := fmt.Sprintf("https://rickandmortyapi.com/api/character/%s", id)
@@ -97,12 +116,6 @@ func getCharacter(id string) (*Character, error) {
 
 	return &character, nil
 }
-
-/*
-func getCharacter(id int) (*Character, error) {
-	url := fmt.Sprintf("https://rickandmortyapi.com/api/character/%d", id)
-}*/
-
 func getAllCharacters() ([]Character, error) {
 	url := "https://rickandmortyapi.com/api/character"
 	var characters []Character
@@ -136,16 +149,4 @@ func getAllCharacters() ([]Character, error) {
 	}
 
 	return characters, nil
-}
-
-func sortLocations(locations []string, location string, characters []Character) []Character {
-	var result []Character
-	for _, loc := range locations {
-		for _, char := range characters {
-			if char.Location.Name == loc && loc == location {
-				result = append(result, char)
-			}
-		}
-	}
-	return result
 }

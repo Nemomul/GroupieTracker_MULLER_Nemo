@@ -1,0 +1,24 @@
+Journal de Dev 
+
+-Lundi 06/03 : recherche de l'Api et expérimentation de l'API. 
+
+-Mardi 07/03 : Changement de l'API car la précedente ne remplissé pas tous les critères nécessaire au bon déroulement du devoir. L'après midi, création de la première page et       prise en main de l'API.
+
+-Samedi 11/03 : Liaison du CSS avec le GO, première requête sur page principale, mise en place des cartes. 
+
+Dimanche 12/03 : Peaufinement de la mise en page et de la requête à l'API. 
+
+Lundi 13/03 : Rangement des dossiers et mise en place des chemins pour les images et assets. 
+
+Mardi 14/03 : Création de la deuxième page ainsi que les différentes requêtes. 
+
+Mercredi 15/03 : Rework des différentes requêtes de la page 2.
+
+Jeudi 16/03 : Difficulté rencontré avec les différentes requêtes de la page 2 par rapport au trie des datas récupéré par l'API.
+
+Vendredi 17/03 : Modification css et html de la seconde page.
+
+Dimanche 19/03 : Commentaire du GO mise en responsive du site.
+
+Lundi 20/03 : Finition des différentes pages, mise en compromis de certaines "features" du site.
+

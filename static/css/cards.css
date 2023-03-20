@@ -1,121 +1,32 @@
-body{
-    font-family: 'RetM';
-    text-align: center;
-    background-color: black;
-    color: chartreuse;
-    
-}
-.container{
-    display: flex;
-    flex-wrap: wrap;
-}
-h1{
-    text-transform: uppercase;
-    font-family: 'RetM';
-    color: chartreuse;
-    font-size: 50px;
-    margin: 0;
-    padding-left:25px ;
-    
-}
 @font-face {
     font-family: 'RetM';
     src: url(../font/ricketmorty.ttf);
-}
-.padding{
-    padding-right: 15px;
-}
-
-nav{
-    width: 100%;
-    height: 75px;
-    background: rgba(0, 0, 0, .8);
-    position: sticky;
-    top: 0px;
-    display: flex;
-    justify-content: space-between;
-    z-index: +5;
-}
-a{
-    position: sticky;
-}
-nav ul{
-    display: flex;
-    margin: 0;   
-    float: right;
-}
-nav ul li{
-    list-style: none;
-}
-nav ul li a{
-    display: block;
-    color: white;
-    text-decoration: none;
-    text-transform: uppercase;
-    position: sticky;
-    font-size: 25px;
-    line-height: 75px;
-}
-nav ul li a:hover{
+  }
+body{
+    font-family: 'RetM';
+    text-align: center;
     color: chartreuse;
+    background-image: url(../img/ricketmorty.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-.cards img {
-    width: 150px;
-    height: 150px;
-}
-.logo{
-    max-width: 85px;
-    max-height: 85px;
-    
-}
-video{
-    width: 100%;
-    padding-top: 25px;
+ .cards{
+    width: fit-content;
+    margin-top: 100px;
+    box-shadow: 0px 0px 10px 10px rgba(99, 240, 18, 0.5);
+    background-color: rgba(000, 000, 000, 0.5);
 } 
 
-.cards {
-    flex-direction: column;
-    width: 250px;
-    margin: 100px auto 20px;
-    padding: 20px;
-    background-color: black;
-    box-shadow: 0px 0px 5px 0px rgba(white);
-    text-align: center;
-    border:3px solid;
-    border-radius: 15px;
-    border-color: chartreuse;
-    }
-  
-  .cards img {
-    max-width: 100%;
-  }
-  .cards p {
-    margin-top: 10px;
-    font-size: 14px;
-  }
-section{
-    text-align: center;
-    padding-bottom: 50px;
-}
-button{
-    font-family: 'RetM';
-    background-color: green;
-}
-button:hover{
-    background-color: chartreuse;
-}
-form{
-    padding-top: 25px;
-}
-.hero {
-    position: relative;
-    z-index: 0;
-}
-
-
-.site-footer .container {
+.ctnr {
     display: flex;
     justify-content: center;
+}
+.site-footer .container {
+    position: bottom;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
   }
   
   .site-footer .social-icons {
@@ -209,7 +120,7 @@ form{
   }
   
   footer {
-    background-color: black;
+    background-color: transparent;
   }
   
   .site-footer h6 {
@@ -248,51 +159,49 @@ form{
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
   }
- 
-/* Responsive styles */
-@media only screen and (max-width: 768px) {
-  h1 {
-    font-size: 30px;
+  .container{
+    padding-top: 50px;
   }
   
-  nav ul {
-    float: none;
-    display: block;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav ul li {
-    display: block;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav ul li a {
-    display: block;
+nav{
     width: 100%;
-    line-height: 50px;
-    border-bottom: 1px solid #444;
-  }
-  
-  .cards {
-    margin: 20px auto;
-  }
-  
-  .cards img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  video {
-    height: auto;
-  }
-  
-  .site-footer .social-icons {
-    margin-top: 20px;
-  }
-  
-  .site-footer .social-icons a {
-    margin: 0 10px;
-  }
+    height: 75px;
+    background: rgba(0, 0, 0, .8);
+    position: sticky;
+    top: 0px;
+    display: flex;
+    justify-content: space-between;
+    z-index: +5;
+}
+a{
+    position: sticky;
+}
+nav ul{
+    display: flex;
+    margin: 0;   
+    float: right;
+}
+nav ul li{
+    list-style: none;
+}
+nav ul li a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    position: sticky;
+    font-size: 25px;
+    line-height: 75px;
+}
+nav ul li a:hover{
+    color: chartreuse;
+}
+.cards img {
+    width: 150px;
+    height: 150px;
+}
+.logo{
+    max-width: 85px;
+    max-height: 85px;
+    
 }

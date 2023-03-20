@@ -1,2 +1,23 @@
 # GroupieTracker_MULLER_Nemo
-Devoir API
+
+# Projet Rick&Morty API
+
+Le projet consiste à créer un site web hébergé en Golang qui utilise l'API Rick&Morty. Le site doit permettre de rechercher des informations sur les personnages.
+
+# Le site permet de :
+
+Le site permet de rechercher toutes les informations sur tous les personnages de la série animée Rick et Morty, comme leurs localisations, les épisodes où les personnages apparaissent, leurs races, leurs prénoms et divers autres informations. 
+
+# API Rick&Morty
+
+Lien vers l'API : https://rickandmortyapi.com/
+
+L'API Disney est un outil pour les développeurs qui cherchent à intégrer des éléments de l'univers Disney ct.dans leurs applications. Grâce à cette API, les développeurs peuvent accéder à une multitude de données relatives aux films, personnages etc.
+
+# Technologies utilisées
+
+Le site web est développé en Golang en utilisant le langage HTML et CSS. 
+
+# Équipe de développement
+
+    MULLER Némo 
